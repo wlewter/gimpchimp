@@ -1,0 +1,453 @@
+[
+  {
+    "rank": 0,
+    "min_rp": 0,
+    "max_rp": 1,
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Protector",
+        "female": "Protector"
+      },
+      {
+        "realm": 2,
+        "male": "Vakten",
+        "female": "Vakten"
+      },
+      {
+        "realm": 3,
+        "male": "Wayfarer",
+        "female": "Wayfarer"
+      }
+    ]
+  },
+  {
+    "rank": 1,
+    "min_rp": 1,
+    "max_rp": 9625,
+    "minor_rank_start": 1,
+    "levels": [
+      1,
+      25,
+      125,
+      350,
+      750,
+      1375,
+      2275,
+      3500,
+      5100
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Guardian",
+        "female": "Guardian"
+      },
+      {
+        "realm": 2,
+        "male": "Skiltvakten",
+        "female": "Skiltvakten"
+      },
+      {
+        "realm": 3,
+        "male": "Savant",
+        "female": "Savant"
+      }
+    ]
+  },
+  {
+    "rank": 2,
+    "min_rp": 7125,
+    "max_rp": 61750,
+    "levels": [
+      7125,
+      9625,
+      12650,
+      16250,
+      20475,
+      25375,
+      31000,
+      37400,
+      44625,
+      52725
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Warder",
+        "female": "Warder"
+      },
+      {
+        "realm": 2,
+        "male": "Isen Vakten",
+        "female": "Isen Vakten"
+      },
+      {
+        "realm": 3,
+        "male": "Cosantoir",
+        "female": "Cosantoir"
+      }
+    ]
+  },
+  {
+    "rank": 3,
+    "min_rp": 61750,
+    "max_rp": 213875,
+    "levels": [
+      61750,
+      71750,
+      82775,
+      94875,
+      108100,
+      122500,
+      138125,
+      155025,
+      173250,
+      192850
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Myrmidon",
+        "female": "Myrmidon"
+      },
+      {
+        "realm": 2,
+        "male": "Flammen Vakten",
+        "female": "Flammen Vakten"
+      },
+      {
+        "realm": 3,
+        "male": "Brehon",
+        "female": "Brehon"
+      }
+    ]
+  },
+  {
+    "rank": 4,
+    "min_rp": 213875,
+    "max_rp": 513500,
+    "levels": [
+      213875,
+      236375,
+      260400,
+      286000,
+      313225,
+      342125,
+      372750,
+      405150,
+      439375,
+      475475
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Gryphon Knight",
+        "female": "Gryphon Knight"
+      },
+      {
+        "realm": 2,
+        "male": "Elding Vakten",
+        "female": "Elding Vakten"
+      },
+      {
+        "realm": 3,
+        "male": "Grove Protector",
+        "female": "Grove Protector"
+      }
+    ]
+  },
+  {
+    "rank": 5,
+    "min_rp": 513500,
+    "max_rp": 1010625,
+    "levels": [
+      513500,
+      553500,
+      595525,
+      639625,
+      685850,
+      734250,
+      784875,
+      837775,
+      893000,
+      950600
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Eagle Knight",
+        "female": "Eagle Knight"
+      },
+      {
+        "realm": 2,
+        "male": "Stormur Vakten",
+        "female": "Stormur Vakten"
+      },
+      {
+        "realm": 3,
+        "male": "Raven Ardent",
+        "female": "Raven Ardent"
+      }
+    ]
+  },
+  {
+    "rank": 6,
+    "min_rp": 1010625,
+    "max_rp": 1755250,
+    "levels": [
+      1010625,
+      1073125,
+      1138150,
+      1205750,
+      1275975,
+      1348875,
+      1424500,
+      1502900,
+      1584125,
+      1668225
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Phoenix Knight",
+        "female": "Phoenix Knight"
+      },
+      {
+        "realm": 2,
+        "male": "Isen Herra",
+        "female": "Isen Fru"
+      },
+      {
+        "realm": 3,
+        "male": "Silver Hand",
+        "female": "Silver Hand"
+      }
+    ]
+  },
+  {
+    "rank": 7,
+    "min_rp": 1755250,
+    "max_rp": 2797375,
+    "levels": [
+      1755250,
+      1845250,
+      1938275,
+      2034375,
+      2133600,
+      2236000,
+      2341625,
+      2450525,
+      2562750,
+      2678350
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Alerion Knight",
+        "female": "Alerion Knight"
+      },
+      {
+        "realm": 2,
+        "male": "Flammen Herra",
+        "female": "Flammen Fru"
+      },
+      {
+        "realm": 3,
+        "male": "Thunderer",
+        "female": "Thunderer"
+      }
+    ]
+  },
+  {
+    "rank": 8,
+    "min_rp": 2797375,
+    "max_rp": 4187000,
+    "levels": [
+      2797375,
+      2919875,
+      3045900,
+      3175500,
+      3308725,
+      3445625,
+      3586250,
+      3730650,
+      3878875,
+      4030975
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Unicorn Knight",
+        "female": "Unicorn Knight"
+      },
+      {
+        "realm": 2,
+        "male": "Elding Herra",
+        "female": "Elding Fru"
+      },
+      {
+        "realm": 3,
+        "male": "Gilded Spear",
+        "female": "Gilded Spear"
+      }
+    ]
+  },
+  {
+    "rank": 9,
+    "min_rp": 4187000,
+    "max_rp": 5974125,
+    "levels": [
+      4187000,
+      4347000,
+      4511025,
+      4679125,
+      4851350,
+      5027750,
+      5208375,
+      5393275,
+      5582500,
+      5776100
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Lion Knight",
+        "female": "Lion Knight"
+      },
+      {
+        "realm": 2,
+        "male": "Stormur Herra",
+        "female": "Stormur Fru"
+      },
+      {
+        "realm": 3,
+        "male": "Tiarna",
+        "female": "Bantiarna"
+      }
+    ]
+  },
+  {
+    "rank": 10,
+    "min_rp": 5974125,
+    "max_rp": 8208750,
+    "levels": [
+      5974125,
+      6176625,
+      6383650,
+      6595250,
+      6811475,
+      7032375,
+      7258000,
+      7488400,
+      7723625,
+      7963725
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Dragon Knight",
+        "female": "Dragon Knight"
+      },
+      {
+        "realm": 2,
+        "male": "Einherjar",
+        "female": "Einherjar"
+      },
+      {
+        "realm": 3,
+        "male": "Emerald Ridere",
+        "female": "Emerald Ridere"
+      }
+    ]
+  },
+  {
+    "rank": 11,
+    "min_rp": 8208750,
+    "max_rp": 23308097,
+    "levels": [
+      8208750,
+      9111713,
+      10114001,
+      11226541,
+      12461460,
+      13832221,
+      15353765,
+      17042680,
+      18917374,
+      20998286
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Lord",
+        "female": "Lady"
+      },
+      {
+        "realm": 2,
+        "male": "Herra",
+        "female": "Fru"
+      },
+      {
+        "realm": 3,
+        "male": "Barun",
+        "female": "Banbharun"
+      }
+    ]
+  },
+  {
+    "rank": 12,
+    "min_rp": 23308097,
+    "max_rp": 66181501,
+    "levels": [
+      23308097,
+      25871988,
+      28717906,
+      31876876,
+      35383333,
+      39275499,
+      43595804,
+      48391343,
+      53714390,
+      59622973
+    ],
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Baronet",
+        "female": "Baronetess"
+      },
+      {
+        "realm": 2,
+        "male": "Hersir",
+        "female": "Baronsfru"
+      },
+      {
+        "realm": 3,
+        "male": "Ard Tiarna",
+        "female": "Ard Bantiarna"
+      }
+    ]
+  },
+  {
+    "rank": 13,
+    "min_rp": 66181501,
+    "titles": [
+      {
+        "realm": 1,
+        "male": "Baron",
+        "female": "Baroness"
+      },
+      {
+        "realm": 2,
+        "male": "Vicomte",
+        "female": "Vicomtessa"
+      },
+      {
+        "realm": 3,
+        "male": "Ciann Cath",
+        "female": "Ciann Cath"
+      }
+    ]
+  }
+]

@@ -1,0 +1,144 @@
+
+<div ng-init="retrieveCharacters(false)">
+    <div class="row">
+        <p ng-if="!characters">
+            Retrieving character data....
+        </p>
+        <p ng-if="!found">
+            Display ID not found. Try using the search to find who you are looking for.
+        </p>
+
+        <a class="toggle" ng-click="sort(['realm','-realm_war_stats.current.realm_points'])"><span ng-if="order && sortCol[0] === 'realm'" class="glyphicon glyphicon-chevron-down"></span><span ng-if="!order && sortCol[0] === 'realm'" class="glyphicon glyphicon-chevron-up"></span> Sort by Realm</a>
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th title="Sort by Character Name" class="toggle" ng-click="sort('name')"><span ng-if="order && sortCol === 'name'" class="glyphicon glyphicon-chevron-down"></span><span ng-if="!order && sortCol === 'name'" class="glyphicon glyphicon-chevron-up"></span> Name</th>
+                    <th title="Sort by Class" class="toggle" ng-click="sort('class_name')"><span ng-if="order && sortCol === 'class_name'" class="glyphicon glyphicon-chevron-down"></span><span ng-if="!order && sortCol === 'class_name'"  class="glyphicon glyphicon-chevron-up"></span> Class</th>
+                    <th title="Sort by Guild Name" class="toggle hidden-xs" ng-click="sort('guild_info.guild_name')"><span ng-if="order && sortCol === 'guild_info.guild_name'" class="glyphicon glyphicon-chevron-down"></span><span ng-if="!order && sortCol === 'guild_info.guild_name'" class="glyphicon glyphicon-chevron-up"></span> Guild</th>
+                    <th class="hidden-xs"> Server</th>
+                    <th class="total_header"> Realm Rank</th>
+                    <th title="Sort by Realm Points" class="total_header toggle" ng-click="sort('realm_war_stats.current.realm_points')"><span ng-if="order && sortCol === 'realm_war_stats.current.realm_points'" class="glyphicon glyphicon-chevron-down"></span><span ng-if="!order && sortCol === 'realm_war_stats.current.realm_points'" class="glyphicon glyphicon-chevron-up"></span> Realm Points</th>
+                    <th title="Sort by Next RR" class="total_header toggle hidden-xs" ng-click="sort('rr.nextRR')"><span ng-if="order && sortCol === 'rr.nextRR'" class="glyphicon glyphicon-chevron-down"></span><span ng-if="!order && sortCol === 'rr.nextRR'" class="glyphicon glyphicon-chevron-up"></span> Next RR</th>
+                    <th title="Sort by IRS" class="total_header toggle hidden-xs" ng-click="sort('realm_war_stats.current.player_kills.total.irs')"><span ng-if="order && sortCol === 'realm_war_stats.current.player_kills.total.irs'" class="glyphicon glyphicon-chevron-down"></span><span ng-if="!order && sortCol === 'realm_war_stats.current.player_kills.total.irs'" class="glyphicon glyphicon-chevron-up"></span> IRS</th>
+                    <th ng-show="currentUser.name === userName" align="center">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-class="{hibernia: isHib(char), midgard: isMid(char), albion: isAlb(char), active: showDetail, toggle: true}" ng-click="showDetail = !showDetail" ng-repeat-start="char in characters | orderBy: sortCol:order">
+                    <td title="{{ char.name}}">{{ char.name | truncate: 20}}</td>
+                    <td>{{ char.level }} {{ char.race }} {{ char.class_name }}</td>
+                    <td title="{{ char.guild_info.guild_name | truncate: 20}}" class="hidden-xs">{{ char.guild_info.guild_name | truncate: 20}}</td>
+                    <td class="hidden-xs">{{ char.server_name }}</td>
+                    <td align="right">{{ char.rr.rankStr }}</td>
+                    <td align="right">{{ char.realm_war_stats.current.realm_points | number: 0 }}</td>
+                    <td align="right" class="hidden-xs">{{ char.rr.nextRR | number: 0 }}</td>
+                    <td class="hidden-xs" align="right">{{ char.realm_war_stats.current.player_kills.total.irs | number: 2}}</td>
+                    <td ng-show="currentUser.name === userName" align="center"><a href="" title="Click to remove {{ char.name }} from your page." ng-click="deleteChar(char._id, $index)"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+                <tr ng-show="showDetail" class="active">
+                    <th align="right"></th>
+                    <th class="total_header">Deaths</th>
+                    <th class="total_header">Kills</th>
+                    <th class="total_header">Solo Kills</th>
+                    <th class="total_header">Death Blows</th>
+                </tr>
+                <tr ng-show="showDetail && !isAlb(char)" class="albion active">
+                    <td align="right" colspan="1">Alb: </td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.albion.deaths | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.albion.kills | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.albion.solo_kills | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.albion.death_blows | number: 0 }}</td>
+                </tr>
+                <tr ng-show="showDetail && !isMid(char)" class="midgard active">
+                    <td align="right" colspan="1">Mid: </td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.midgard.deaths | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.midgard.kills | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.midgard.solo_kills | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.midgard.death_blows | number: 0 }}</td>
+                </tr>
+                <tr ng-show="showDetail && !isHib(char)" class="hibernia active">
+                    <td align="right" colspan="1">Hib: </td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.hibernia.deaths | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.hibernia.kills | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.hibernia.solo_kills | number: 0 }}</td>
+                    <td align='right'>{{ char.realm_war_stats.current.player_kills.hibernia.death_blows | number: 0 }}</td>
+                </tr>
+                <tr ng-show="showDetail" class="active" ng-repeat-end>
+                    <td align="right" colspan="1"><strong>Total: </strong></td>
+                    <td align='right'><strong>{{ char.realm_war_stats.current.player_kills.total.deaths | number: 0 }}</strong></td>
+                    <td align='right'><strong>{{ char.realm_war_stats.current.player_kills.total.kills | number: 0 }}</strong></td>
+                    <td align='right'><strong>{{ char.realm_war_stats.current.player_kills.total.solo_kills | number: 0 }}</strong></td>
+                    <td align='right'><strong>{{ char.realm_war_stats.current.player_kills.total.death_blows | number: 0 }}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <table class="table table-condensed table-hover stats_table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="total_header">Kills</th>
+                        <th class="total_header">Deaths</th>
+                        <th class="total_header">RR</th>
+                        <th class="total_header">RP</th>
+                        <th class="total_header">IRS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="albion">
+                        <td>Albion:</td>
+                        <td align="right">{{ totals.alb.kills | number: 0 }}</td>
+                        <td align="right">{{ totals.alb.deaths | number: 0 }}</td>
+                        <td align="right">{{ totals.alb.rr.rankStr }}</td>
+                        <td align="right">{{ totals.alb.rp | number: 0 }}</td>
+                        <td align="right">{{ totals.alb.irs | number: 2 }}</td>
+                    </tr>
+                    <tr class="hibernia">
+                        <td>Hibernia:</td>
+                        <td align="right">{{ totals.hib.kills | number: 0 }}</td>
+                        <td align="right">{{ totals.hib.deaths | number: 0 }}</td>
+                        <td align="right">{{ totals.hib.rr.rankStr }}</td>
+                        <td align="right">{{ totals.hib.rp | number: 0 }}</td>
+                        <td align="right">{{ totals.hib.irs | number: 2 }}</td>
+                    </tr>
+                    <tr class="midgard">
+                        <td>Midgard:</td>
+                        <td align="right">{{ totals.mid.kills | number: 0 }}</td>
+                        <td align="right">{{ totals.mid.deaths | number: 0 }}</td>
+                        <td align="right">{{ totals.mid.rr.rankStr }}</td>
+                        <td align="right">{{ totals.mid.rp | number: 0 }}</td>
+                        <td align="right">{{ totals.mid.irs | number: 2 }}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="overall">
+                        <th>Total:</th>
+                        <th class="total_header">{{ totals.overall.kills | number: 0 }}</th>
+                        <th class="total_header">{{ totals.overall.deaths | number: 0 }}</th>
+                        <th class="total_header">{{ totals.overall.rr.rankStr }}</th>
+                        <th class="total_header">{{ totals.overall.rp | number: 0 }}</th>
+                        <th class="total_header">{{ totals.overall.irs | number: 2 }}</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="row">
+        Link to share with friends: <a href="{{url}}">{{ url }}</a>
+    </div>
+
+    <div class="row">
+        <strong>Last Updated:</strong> {{ updated | date: 'short' }} CST
+    </div>
+
+    <div class="row" ng-show="showRefreshLink">
+        <a href="" ng-click="forceRefresh()">Force Refresh</a>
+    </div>
+</div>

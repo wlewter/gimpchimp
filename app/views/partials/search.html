@@ -1,0 +1,29 @@
+<div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Display ID</th>
+                        <th class="total_header">Char Count</th>
+                        <th class="total_header">Realm Rank</th>
+                        <th class="total_header">Total RP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-show="message">
+                        <td colspan="4">{{message}}</td>
+                    </tr>
+
+                    <tr ng-click="show(user._user.name)" class="midgard toggle" ng-repeat="user in users | orderBy: '_user.name'">
+                        <td>{{ user._user.name }}</td>
+                        <td class="total_header">{{ user._chars.length }}</td>
+                        <td class="total_header">{{ user.rr.rankStr }}</td>
+                        <td class="total_header">{{ user.totalRP | number}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
