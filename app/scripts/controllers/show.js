@@ -53,8 +53,14 @@ angular.module('gimpchimpApp')
         $scope.characters = userchars._chars;
         angular.forEach($scope.characters, function (char) {
 
-          if( !$scope.showRefreshLink && momentNow.diff(moment(char.updated), 'hours', true) > 1)
+          if( !$scope.showRefreshLink && momentNow.diff(moment(char.updated), 'hours', true) > 1) {
             $scope.showRefreshLink = true;
+          }
+
+          if(!char.guild_info){
+            char.guild_info = {};
+            char.guild_info.guild_name = '';
+          }
 
           char.realm = REALM[char.realm];
 
