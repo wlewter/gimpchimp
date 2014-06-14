@@ -40,8 +40,6 @@ implement this, you need to download the theme from here:
 Overwrite the bootstrap.min.css and bootstrap.css files in your app/bower_components/bootstrap/dist/css
 folder with the cyborg versions.
 
-In order to use Font Awesome glyphs you also need to copy the files contained in 
-app/bower_components/font-awesome/fonts into your app/fonts folder.
 
 ###Running local:
 **make sure mongo is started**
