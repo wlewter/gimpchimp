@@ -33,6 +33,7 @@ angular.module('gimpchimpApp')
 
           // loop through the levels
           for (var i = rankObj.levels.length; i >= 0; i--) {
+
             if (rankObj.levels[i] <= rp ) {
               // if it's rank 1 then start with level 1
               if (rankObj.minor_rank_start) {
@@ -48,13 +49,19 @@ angular.module('gimpchimpApp')
 
 
         if( minor === 9 ) {
+
           var nextRRTotal = rankObj.max_rp + 1;
 
           rankObj = _.find(realmRanks, function(realmRank) {
             return nextRRTotal >= realmRank.min_rp && (!realmRank.max_rp || nextRRTotal < realmRank.max_rp);
           });
 
-          nextRRTotal = rankObj.levels[0];
+          if( major === 12 ) {
+            nextRRTotal = rankObj.min_rp;
+          } else {
+            nextRRTotal = rankObj.levels[0];
+          }
+
           nextRR = nextRRTotal - rp;
 
         } else if( major === 0 ) {
