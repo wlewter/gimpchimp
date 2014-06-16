@@ -27,7 +27,7 @@
                 <tr ng-class="{hibernia: isHib(char), midgard: isMid(char), albion: isAlb(char), active: showDetail, toggle: true}" ng-click="showDetail = !showDetail" ng-repeat-start="char in characters | orderBy: sortCol:order">
                     <td title="{{ char.name}}">{{ char.name | truncate: 20}}</td>
                     <td>{{ char.level }} {{ char.race }} {{ char.class_name }}</td>
-                    <td title="{{ char.guild_info.guild_name | truncate: 20}}" class="hidden-xs">{{ char.guild_info.guild_name | truncate: 20}}</td>
+                    <td title="{{ char.guild_info.guild_name }}" class="hidden-xs">{{ char.guild_info.guild_name | truncate: 20}}</td>
                     <td class="hidden-xs">{{ char.server_name }}</td>
                     <td align="right">{{ char.rr.rankStr }}</td>
                     <td align="right">{{ char.realm_war_stats.current.realm_points | number: 0 }}</td>
