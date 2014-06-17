@@ -5,7 +5,8 @@ angular.module('gimpchimpApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'angular-growl'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
