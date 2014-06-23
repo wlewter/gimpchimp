@@ -91,9 +91,9 @@ angular.module('gimpchimpApp', [
     $httpProvider.defaults.headers.get['If-Modified-Since'] = '0';
   }])*/
 
-  .config(['growlProvider', '$httpProvider', function(growlProvider, $httpProvider) {
-    $httpProvider.responseInterceptors.push(growlProvider.serverMessagesInterceptor);
-  }])
+  //.config(['growlProvider', '$httpProvider', function(growlProvider, $httpProvider) {
+  //  $httpProvider.responseInterceptors.push(growlProvider.serverMessagesInterceptor);
+  //}])
 
   .constant('REALM', ['Unknown', 'Albion', 'Midgard', 'Hibernia'])
 

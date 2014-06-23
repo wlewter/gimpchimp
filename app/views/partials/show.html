@@ -81,6 +81,7 @@
                     <tr>
                         <th></th>
                         <th class="total_header">Kills</th>
+                        <th class="total_header">Solo Kills</th>
                         <th class="total_header">Deaths</th>
                         <th class="total_header">RR</th>
                         <th class="total_header">RP</th>
@@ -91,6 +92,7 @@
                     <tr class="albion">
                         <td>Albion:</td>
                         <td align="right">{{ totals.alb.kills | number: 0 }}</td>
+                        <td align="right">{{ totals.alb.solo_kills | number: 0 }}</td>
                         <td align="right">{{ totals.alb.deaths | number: 0 }}</td>
                         <td align="right">{{ totals.alb.rr.rankStr }}</td>
                         <td align="right">{{ totals.alb.rp | number: 0 }}</td>
@@ -99,6 +101,7 @@
                     <tr class="hibernia">
                         <td>Hibernia:</td>
                         <td align="right">{{ totals.hib.kills | number: 0 }}</td>
+                        <td align="right">{{ totals.hib.solo_kills | number: 0 }}</td>
                         <td align="right">{{ totals.hib.deaths | number: 0 }}</td>
                         <td align="right">{{ totals.hib.rr.rankStr }}</td>
                         <td align="right">{{ totals.hib.rp | number: 0 }}</td>
@@ -107,6 +110,7 @@
                     <tr class="midgard">
                         <td>Midgard:</td>
                         <td align="right">{{ totals.mid.kills | number: 0 }}</td>
+                        <td align="right">{{ totals.mid.solo_kills | number: 0 }}</td>
                         <td align="right">{{ totals.mid.deaths | number: 0 }}</td>
                         <td align="right">{{ totals.mid.rr.rankStr }}</td>
                         <td align="right">{{ totals.mid.rp | number: 0 }}</td>
@@ -117,6 +121,7 @@
                     <tr class="overall">
                         <th>Total:</th>
                         <th class="total_header">{{ totals.overall.kills | number: 0 }}</th>
+                        <th class="total_header">{{ totals.overall.solo_kills | number: 0 }}</th>
                         <th class="total_header">{{ totals.overall.deaths | number: 0 }}</th>
                         <th class="total_header">{{ totals.overall.rr.rankStr }}</th>
                         <th class="total_header">{{ totals.overall.rp | number: 0 }}</th>

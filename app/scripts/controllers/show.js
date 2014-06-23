@@ -9,24 +9,28 @@ angular.module('gimpchimpApp')
       $scope.totals = {
         alb: {
           kills: 0,
+          solo_kills: 0,
           deaths: 0,
           rp: 0,
           irs: 0
         },
         mid: {
           kills: 0,
+          solo_kills: 0,
           deaths: 0,
           rp: 0,
           irs: 0
         },
         hib: {
           kills: 0,
+          solo_kills: 0,
           deaths: 0,
           rp: 0,
           irs: 0
         },
         overall: {
           kills: 0,
+          solo_kills: 0,
           deaths: 0,
           rp: 0,
           irs: 0
@@ -73,22 +77,26 @@ angular.module('gimpchimpApp')
             case 'Albion':
               $scope.totals.alb.kills += char.realm_war_stats.current.player_kills.total.kills;
               $scope.totals.alb.deaths += char.realm_war_stats.current.player_kills.total.deaths;
+              $scope.totals.alb.solo_kills += char.realm_war_stats.current.player_kills.total.solo_kills;
               $scope.totals.alb.rp += char.realm_war_stats.current.realm_points;
               break;
             case 'Hibernia':
               $scope.totals.hib.kills += char.realm_war_stats.current.player_kills.total.kills;
               $scope.totals.hib.deaths += char.realm_war_stats.current.player_kills.total.deaths;
+              $scope.totals.hib.solo_kills += char.realm_war_stats.current.player_kills.total.solo_kills;
               $scope.totals.hib.rp += char.realm_war_stats.current.realm_points;
               break;
             case 'Midgard':
               $scope.totals.mid.kills += char.realm_war_stats.current.player_kills.total.kills;
               $scope.totals.mid.deaths += char.realm_war_stats.current.player_kills.total.deaths;
+              $scope.totals.mid.solo_kills += char.realm_war_stats.current.player_kills.total.solo_kills;
               $scope.totals.mid.rp += char.realm_war_stats.current.realm_points;
               break;
           }
 
           $scope.totals.overall.kills += char.realm_war_stats.current.player_kills.total.kills;
           $scope.totals.overall.deaths += char.realm_war_stats.current.player_kills.total.deaths;
+          $scope.totals.overall.solo_kills += char.realm_war_stats.current.player_kills.total.solo_kills;
           $scope.totals.overall.rp += char.realm_war_stats.current.realm_points;
 
 
