@@ -7,6 +7,12 @@ angular.module('gimpchimpApp')
       $http.get('/api/changeLog').success(function (log) {
         $scope.changeLog = log;
       });
+
+
+      $http.get('/api/featureReq').success(function (features) {
+        $scope.features = features;
+      });
+
   });
 
 }());

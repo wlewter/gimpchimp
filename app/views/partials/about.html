@@ -30,5 +30,24 @@
           </div>
       </div>
 
+
+      <div class="panel panel-default" ng-show="features">
+          <div class="panel-heading">
+              <h3 class="panel-title">Feature Request</h3>
+          </div>
+          <div class="panel-body">
+              <dl class="dl-horizontal">
+                  <span ng-repeat="item in features | orderBy: 'featureReqDate': true">
+                      <dt>
+                          {{item.featureReqDate | date: 'yyyy-MM-dd'}}
+                      </dt>
+                      <dd>
+                          <span ng-class="{featureResolved: item.featureImplDate}">{{item.featureDesc}}</span> - {{item.featureImplDate | date: 'yyyy-MM-dd'}}
+                      </dd>
+                  </span>
+              </dl>
+          </div>
+      </div>
+
   </div>
 </div>
