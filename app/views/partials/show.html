@@ -36,7 +36,7 @@
                     <td ng-show="currentUser.name === userName" align="center"><a href="" title="Click to remove {{ char.name }} from your page." ng-click="deleteChar(char._id, $index)"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
                 <tr ng-show="showDetail" class="active">
-                    <th align="right"></th>
+                    <th align="right"><a ng-href="http://search.camelotherald.com/#/character/{{char.character_web_id}}">Herald Link</a></th>
                     <th class="total_header">Deaths</th>
                     <th class="total_header">Kills</th>
                     <th class="total_header">Solo Kills</th>
